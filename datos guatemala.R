@@ -11,14 +11,14 @@ setwd(directorio)
 require(rvest)
 require(magrittr)
 ## Loading required package: magrittr
-url <- "http://www.banguat.gob.gt/participaciones/envolver.asp?karchivo=140119"
+url <- "http://www.banguat.gob.gt/participaciones/envolver.asp?karchivo=160320"
 # we save in the variable url the website url.
 pagina <- read_html(url, as.data.frame=T, stringsAsFactors = TRUE)
 #We create a function with read_html to read the web page.
 pagina %>%  
   html_nodes("table") %>% 
   #Here, we indicate that this is the table we want to extract.
-  .[[5]] %>% 
+  .[[9]] %>% 
   #Here we put of which table of the HTML is about, in our example it is the third table of the web.
   html_table(fill=T) -> t
 #We save it in a CSV.
