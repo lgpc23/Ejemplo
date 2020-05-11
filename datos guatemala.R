@@ -18,7 +18,7 @@ pagina <- read_html(url, as.data.frame=T, stringsAsFactors = TRUE)
 pagina %>%  
   html_nodes("table") %>% 
   #Here, we indicate that this is the table we want to extract.
-  .[[5]] %>% 
+  .[[9]] %>% 
   #Here we put of which table of the HTML is about, in our example it is the third table of the web.
   html_table(fill=T) -> t
 #We save it in a CSV.
